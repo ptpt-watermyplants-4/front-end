@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
-import logo from '../Images/logo.png';
+import logo from '../Images/logo6.png';
 import landingPage from './Homepage/LandingPage';
 import profile from './UserProfile';
 import gallery from './Homepage/Gallery';
 import contact from './Homepage/Contact';
 import about from './Homepage/About';
 import login from './login';
+import './Styles/Navbar.css'
 
-const navbar = () => {
+const Navbar = () => {
 
     const [nav, setNav] = useState(false);
 
+    const changeBackground = () => {
+        if(window.scrollY >= 50){
+            setNav(true);
+        } else {
+            setNav(false);
+        }
+    }
+    window.addEventListener('scroll', changeBackground)
+
     return (
-        <nav>
+        <nav className={ nav ? 'nav active' : 'nav'}>
             <a href={landingPage} className='logo'>
                 <img src={logo} alt='plant logo'/>
             </a>
@@ -31,4 +41,4 @@ const navbar = () => {
     )
 }
 
-export default navbar;
+export default Navbar;
