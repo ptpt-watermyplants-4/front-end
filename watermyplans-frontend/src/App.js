@@ -8,8 +8,11 @@ function App() {
     <div className="App">
       <Navbar />
       <Register />
-      <WaterMyPlantsPage />
       
+      <div>
+        <WaterMyPlantsPage />  
+      </div>
+          
     </div>
   );
 }
