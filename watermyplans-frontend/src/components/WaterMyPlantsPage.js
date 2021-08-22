@@ -1,14 +1,27 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { axiosWithAuth } from '../../helpers/axiosWithAuth';
+// import { axiosWithAuth } from '../../helpers/axiosWithAuth';
 
-import Navbar from '../navbar';
-import PlantList from '../PlantList';
+import Navbar from './navbar';
+import PlantList from './PlantList';
 
 const WaterMyPlantsPage = () => {
     const [plants, setPlants] = ([]);
     // const [edit, setEdit] = useState(false);
 
     //useEffect for fetching plant will be here!!
+
+    // const fetchPlants = () => {
+    //     axios()
+    //     .get("http://fakeapi.jsonparseronline.com/categories")
+    //     .then(response => {
+    //         console.log(response)
+    //         setPlants(response.data)
+    //     })
+    //     .catch(error => {
+    //         console.log("Error fetching data", error)
+    //     })
+    // }
 
     // const toggleEdit = (value) => {
     //     setEdit(value);
@@ -48,9 +61,9 @@ const WaterMyPlantsPage = () => {
 
 
     return (
-        <div className="landingContainer">
+        <div className="waterMyPlantsContainer">
             <Navbar />
-            <PlantList plants={plants}/>
+            <PlantList plants={plants} />
         </div>
     )
 }
