@@ -1,21 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import PlantCard from './PlantCard';
 
-const PlantList = () => {
-    const plantsList = [];
-    const [plants, setPlants] = useState(plantsList)
-
-    useEffect(() => {
-        axios
-        .get('https://quote-garden.herokuapp.com/api/v3/quotes')
-        .then(response => {
-            setPlants(response.data.data)
-        })
-        .catch(error => {
-            console.log("Error fetching data", error)
-        })
-    }, [])
+const PlantList = (props) => {
+    const { plants } = props;
 
 
     return (
