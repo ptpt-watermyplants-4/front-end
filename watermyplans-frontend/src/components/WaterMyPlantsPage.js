@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from './navbar';
 import PlantList from './PlantList';
 import axios from 'axios';
+import './Styles/waterMyPlants.css';
 
 const plantsList = [];
 const newPlantObject = {
@@ -49,15 +50,11 @@ export default function WaterMyPlantsPage() {
 
     return (
         <div className="waterMyPlantsContainer">
-
-
             {/*will be adding a nav bar here */}
-            <div className="plantListContainer">
-                <PlantList plants={plants}/>
-            </div>
+            <PlantList plants={plants}/>
 
-            <div className="addPlantForm">
-                <form onSubmit={addPlant}> 
+            <div className="addPlantFormCont">
+                <form className="addPlantForm" onSubmit={addPlant}> 
                     <label>Name: 
                         <input type='text' name='name' value={newPlants.name} onChange={addingPlantChange}/>
                     </label>
