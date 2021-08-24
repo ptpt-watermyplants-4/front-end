@@ -6,13 +6,7 @@ import WaterMyPlantsPage from './components/WaterMyPlantsPage';
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Register />
-      
-      <div>
-        <WaterMyPlantsPage />  
-      </div>
-          
+      <Navbar />      
     </div>
   );
 }

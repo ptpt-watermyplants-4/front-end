@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
+import { Route, Link, Switch } from 'react-router-dom';
 import logo from '../Images/logo6.png';
 import landingPage from './Homepage/LandingPage';
-import profile from './UserProfile';
-import gallery from './Homepage/Gallery';
-import contact from './Homepage/Contact';
-import about from './Homepage/About';
-import login from './login';
+import About from './Homepage/About';
+import Contact from './Homepage/Contact';
+import Gallery from './Homepage/Gallery';
+import UserProfile from './UserProfile';
+import Login from './login';
+import Register from './register';
 import './Styles/Navbar.css'
+import WaterMyPlantsPage from './WaterMyPlantsPage';
+
+
+
+
+
+
 
 const Navbar = () => {
 
@@ -22,22 +31,65 @@ const Navbar = () => {
     window.addEventListener('scroll', changeBackground)
 
     return (
-        <nav className={ nav ? 'nav active' : 'nav'}>
-            <a href={landingPage} className='logo'>
-                <img src={logo} alt='plant logo'/>
-            </a>
-            <input type='checkbox' className='menu-btn' id='menu-btn'/>
-            <label className='menu-icon' for='menu-btn'>
-                <span className='nav-icon'></span>
-            </label>
-            <ul className='menu'>
-                <li><a href={profile}>Profile</a></li>
-                <li><a href={gallery}>Gallery</a></li>
-                <li><a href={contact}>Contact</a></li>
-                <li><a href={about}>About</a></li>
-                <li><a href={login}>Login</a></li>
-            </ul>
-        </nav>
+        <>
+            <nav className={ nav ? 'nav active' : 'nav'}>
+                <a href={landingPage} className='logo'>
+                    <img src={logo} alt='plant logo'/>
+                </a>
+                <input type='checkbox' className='menu-btn' id='menu-btn'/>
+                <label className='menu-icon' for='menu-btn'>
+                    <span className='nav-icon'></span>
+                </label>
+                {/* <ul className='menu'> */}
+                    {/* <li><a href={profile}>Profile</a></li>
+                    <li><a href={gallery}>Gallery</a></li>
+                    <li><a href={contact}>Contact</a></li>
+                    <li><a href={about}>About</a></li>
+                    <li><a href={login}>Login</a></li> */}
+                {/* </ul> */}
+
+                <Link to="/watermyplants">Main Page</Link>
+                <Link to="/profile">Profile</Link>
+                <Link to="/gallery">Gallery</Link>
+                <Link to="/contact">Contact</Link>
+                <Link to="/about">About</Link>
+                <Link to="/login">Login</Link>
+                <Link to="/register">Sign Up!</Link>
+                
+            </nav>
+
+            <Switch>
+                <Route path='/watermyplants'>
+                    <WaterMyPlantsPage />
+                </Route>
+
+                <Route path='/profile'>
+                    <UserProfile />
+                </Route>
+
+                <Route path='/gallery'>
+                    <Gallery />
+                </Route>
+
+                <Route path='/contact'>
+                    <Contact />
+                </Route>
+
+                <Route path='/about'>
+                    <About />
+                </Route>
+
+                <Route path='/login'>
+                    <Login />
+                </Route>
+
+                <Route path='/register'>
+                    <Register />
+                </Route>
+
+
+            </Switch>
+        </>
     )
 }
 
