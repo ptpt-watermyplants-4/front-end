@@ -5,8 +5,8 @@ const PlantCard = (props) => {
     const { plant } = props;
     return (
         <div key={plant.id}>
-            <h3>Name: {plant.quoteAuthor} </h3>
-            <p> {plant.quoteText} </p>
+            <h3>Name: {plant.employee_name} </h3>
+            <p>Number: {plant.employee_salary} </p>
         </div>
     )
 }
