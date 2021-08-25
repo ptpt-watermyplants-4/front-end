@@ -56,7 +56,13 @@ nav ul{
 	box-shadow: 5px 10px 10px rgba(189, 198, 64, 0.411);
 	transition: all ease 0.2s;
 }
-nav ul li a{
+
+.linkContainer {
+	display: flex;
+	flex-flow: row;
+}
+
+.navlink {
     font-family: calibri;
 	height:40px;
 	line-height: 43px;
@@ -71,7 +77,7 @@ nav ul li a{
     border-radius: 3px;
     transition: 0.2s ease-in-out;
 }
-nav ul li a:hover{
+.navlink:hover {
 	background-color: #67B826;
     color:#ffffff;
 	box-shadow: 5px 10px 10px #247209;

@@ -47,14 +47,15 @@ const Navbar = () => {
                     <li><a href={about}>About</a></li>
                     <li><a href={login}>Login</a></li> */}
                 {/* </ul> */}
-
-                <Link to="/watermyplants">Main Page</Link>
-                <Link to="/profile">Profile</Link>
-                <Link to="/gallery">Gallery</Link>
-                <Link to="/contact">Contact</Link>
-                <Link to="/about">About</Link>
-                <Link to="/login">Login</Link>
-                <Link to="/register">Sign Up!</Link>
+            <div className="linkContainer">
+                <Link className="navlink" to="/watermyplants">Main Page</Link>
+                <Link className="navlink" to="/profile">Profile</Link>
+                <Link className="navlink" to="/gallery">Gallery</Link>
+                <Link className="navlink" to="/contact">Contact</Link>
+                <Link className="navlink" to="/about">About</Link>
+                <Link className="navlink" to="/login">Login</Link>
+                <Link className="navlink" to="/register">Sign Up!</Link>
+            </div>
                 
             </nav>
 

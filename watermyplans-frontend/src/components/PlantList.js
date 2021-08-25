@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import PlantCard from './PlantCard';
+import './Styles/waterMyPlants.css';
 
 const PlantList = (props) => {
     const { plants } = props;
 
 
     return (
-        <div>
+        <div className='plantListContainer'>
             <h1>Let's try this again.</h1>
             {plants.map((plant) => {
                 return (
