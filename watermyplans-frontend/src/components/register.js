@@ -1,5 +1,6 @@
 import * as yup from 'yup'
 import React, { useState, useEffect } from 'react'
+import axios from 'axios';
 
 const schema = yup.object().shape({
     username: yup.string().required().min(2, 'name must be at least 2 characters'), 
@@ -29,6 +30,7 @@ const initialDisabled = true
 const Register = () => {
     const [formValues, setFormValues] = useState(initialFormValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors)
+    const [ newUsers, setNewUsers ] = useState([])
     const [disabled, setDisabled] = useState(initialDisabled)
 
     const onChange = evt => {
@@ -67,13 +69,41 @@ useEffect(() => {
     })
 }, [formValues])
 
+
+    //post for adding new users
+    // const postNewUser = (user) => {
+    //     axios
+    //     .post('', user)
+    //     .then(response => {
+    //         console.log("New User: ", response)
+    //     })
+    //     .catch(error => {
+    //         console.log("Error creating new user: ", error)
+    //     })
+    //     .finally(() => {
+    //         setFormValues(initialFormValues)
+    //     })
+    // }
+
+    //submit handler for register form
+    // const submitRegForm = (event) => {
+    //     event.preventDefault();
+    //     const newUser = {
+    //         username: formValues.username, 
+    //         email: formValues.email, 
+    //         phoneNumber: formValues.username, 
+    //         password: formValues.password,
+    //     }
+    //     postNewUser(newUser)
+    // }
+
     return (
         <div className='form'>
             <h1>Welcome to Water My Plants!</h1>
             <br/>
             <h2>Create your account here!</h2>
 
-            <form>
+            <form> {/*onSubmit={submitRegForm}*/}
                 <label>Username:
                     <input
                     name='username'
@@ -106,7 +136,7 @@ useEffect(() => {
                     type='text'
                     onChange={onChange}
                     />
-                <button>Register</button>
+                <button type='submit'>Register</button>
                 <div className='formRegisterErrors'>
                     <div>{formErrors.username}</div>
                     <div>{formErrors.email}</div>
