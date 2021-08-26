@@ -3,6 +3,7 @@ import PlantCard from './PlantCard';
 import './Styles/waterMyPlants.css';
 
 const PlantList = (props) => {
+
     const { plants } = props;
 
 

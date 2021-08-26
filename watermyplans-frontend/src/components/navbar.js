@@ -40,13 +40,6 @@ const Navbar = () => {
                 <label className='menu-icon' for='menu-btn'>
                     <span className='nav-icon'></span>
                 </label>
-                {/* <ul className='menu'> */}
-                    {/* <li><a href={profile}>Profile</a></li>
-                    <li><a href={gallery}>Gallery</a></li>
-                    <li><a href={contact}>Contact</a></li>
-                    <li><a href={about}>About</a></li>
-                    <li><a href={login}>Login</a></li> */}
-                {/* </ul> */}
             <div className="linkContainer">
                 <Link className="navlink" to="/watermyplants">Main Page</Link>
                 <Link className="navlink" to="/profile">Profile</Link>
@@ -87,8 +80,6 @@ const Navbar = () => {
                 <Route path='/register'>
                     <Register />
                 </Route>
-
-
             </Switch>
         </>
     )
