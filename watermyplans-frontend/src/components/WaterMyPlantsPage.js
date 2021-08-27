@@ -2,18 +2,16 @@ import React, { useEffect, useState } from 'react';
 import Navbar from './navbar';
 import PlantList from './PlantList';
 import AddPlant from './AddPlant';
-import axios from 'axios';
+import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import './Styles/waterMyPlants.css';
 
 const plantsList = [];
 const newPlantObject = {
-    content: '',
-    hits: '',
     id: '',
-    imageURL: '',
-    likes: '',
-    title: '',
-    userId: ''
+    name: '',
+    year: '',
+    color: '',
+    pantone_value: ''
 }
 
 export default function WaterMyPlantsPage() {
@@ -23,11 +21,14 @@ export default function WaterMyPlantsPage() {
 
     // fetching data for cards
     useEffect(() => {
-        fetch("http://fakeapi.jsonparseronline.com/posts")
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-            setPlants(data)
+        axiosWithAuth()
+        .get("/unknown")
+        .then(response => {
+            console.log(response)
+            setPlants(response.data.data);
+        })
+        .catch(error => {
+            console.log("Error fetching data: ", error)
         })
     }, [])
 

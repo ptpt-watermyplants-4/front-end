@@ -1,5 +1,12 @@
 import axios from 'axios';
 
 export const axiosWithAuth = () => {
-    return <div> coming soon</div>
+    const token = localStorage.getItem("token");
+
+    return axios.create({
+        baseURL: 'https://reqres.in/api',
+        headers: {
+            authorization: token,
+        },
+    })
 }
