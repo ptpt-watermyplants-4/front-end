@@ -22,22 +22,4 @@ function App() {
   );
 }
 
-// This was added by Tobi
-<Route
-  exact
-  path="/items/:id/edit"
-  render={props => <ItemEditForm {...props} updateItem={this.updateItem} />}
-/>
-
-
-// This (PUT Request) was added by Tobi 
-updateItem = item => {
-  axios.put(`http://localhost:3333/items/${item.id}`, item)
-    .then(res => {
-      this.setState({items: res.data});
-      this.props.history.push('/items');
-    })
-    .catch(err => console.log(err));
-}
-
 export default App;
