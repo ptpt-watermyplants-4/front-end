@@ -4,15 +4,22 @@ import './Styles/waterMyPlants.css';
 
 const PlantList = (props) => {
 
-    const { plants } = props;
+    const { plants, plantImages } = props;
+
+    console.log(plantImages);
 
 
     return (
         <div className='plantListContainer'>
             <h1>Let's try this again.</h1>
+            {plantImages.map((image => {
+                return(
+                    <h1>{image.name} <img scr={image.imagePath}/> </h1>
+                )
+            }))}
             {plants.map((plant) => {
                 return (
-                    <PlantCard key={plant.id} plant={plant} />
+                    <PlantCard key={plant.id} plant={plant} plantImages={plantImages} />
                 )
             })}
         </div>

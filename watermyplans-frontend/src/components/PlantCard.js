@@ -3,7 +3,7 @@ import './Styles/waterMyPlants.css';
 
 
 const PlantCard = (props) => {
-    const { plant } = props;
+    const { plant, plantImage } = props;
     return (
         <div className='plantCardContainer' key={plant.id}>
             <h3>Name: {plant.name} </h3>
