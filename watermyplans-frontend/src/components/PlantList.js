@@ -14,7 +14,10 @@ const PlantList = (props) => {
             <h1>Let's try this again.</h1>
             {plantImages.map((image => {
                 return(
-                    <h2>{image.name} <img src={ image.image } /> </h2>
+                    <div className="plantImageContainer">
+                        <img src={ image.image } />
+                        <h2>{image.name}</h2>
+                    </div>
                 )
             }))}
             {plants.map((plant) => {

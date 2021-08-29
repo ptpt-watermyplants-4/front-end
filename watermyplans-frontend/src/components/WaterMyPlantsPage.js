@@ -36,10 +36,11 @@ const plantImagesArr = [
 const plantsList = [];
 const newPlantObject = {
     id: '',
-    name: '',
-    year: '',
-    color: '',
-    pantone_value: ''
+    nickName: '',
+    species: '',
+    h2oFrequency: '',
+    image: '',
+    dateLastWatered: ''
 }
 
 export default function WaterMyPlantsPage() {
@@ -54,6 +55,7 @@ export default function WaterMyPlantsPage() {
         .get("/plants")
         .then(response => {
             console.log(response);
+            setPlants(response.data);
         })
         .catch(error => {
             console.log("Error fetching data: ", error)
@@ -65,9 +67,6 @@ export default function WaterMyPlantsPage() {
             <PlantList plants={plants} plantImages={plantImages}/>
 
             <AddPlant plants={plants} newPlants={newPlants} setPlants={setPlants} setNewPlants={setNewPlants}/>
-            <h2> Does this image render?? <img src={bluesage} /></h2>
-
-
         </div>
     )
 }

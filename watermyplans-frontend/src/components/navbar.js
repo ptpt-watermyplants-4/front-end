@@ -10,6 +10,7 @@ import Login from './login';
 import Register from './register';
 import './Styles/Navbar.css'
 import WaterMyPlantsPage from './WaterMyPlantsPage';
+import PrivateRoute from './PrivateRoute';
 
 
 
