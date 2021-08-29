@@ -14,7 +14,7 @@ const PlantList = (props) => {
             <h1>Let's try this again.</h1>
             {plantImages.map((image => {
                 return(
-                    <h1>{image.name} <img scr={image.imagePath}/> </h1>
+                    <h2>{image.name} <img src={ image.image } /> </h2>
                 )
             }))}
             {plants.map((plant) => {
