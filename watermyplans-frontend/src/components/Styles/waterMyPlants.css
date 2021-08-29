@@ -9,6 +9,11 @@
     justify-content: space-around;
 }
 
+.plantCardContainer img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
 .plantListContainer {
     display: flex;
     flex-flow: column;
@@ -30,4 +35,14 @@
 .addPlantForm button{
     background: rgba(136, 216, 64, .8);
     border: 1px solid #2A351F;
+}
+
+.plantImageContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.plantImageContainer img {
+    max-width: 200px;
+    max-height: 200px;
 }

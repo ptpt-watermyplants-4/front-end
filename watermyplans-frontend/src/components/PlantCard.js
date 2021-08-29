@@ -6,9 +6,10 @@ const PlantCard = (props) => {
     const { plant, plantImage } = props;
     return (
         <div className='plantCardContainer' key={plant.id}>
-            <h3>Name: {plant.name} </h3>
-            <p>Year: {plant.year} </p>
-            <p>Color: {plant.color} </p>
+            <h3>Name: {plant.nickName} </h3>
+            <img src={plant.image} />
+            <p>Species: {plant.species} </p>
+            <p>Water Frequency: {plant.h2oFrequency} </p>
         </div>
     )
 }
