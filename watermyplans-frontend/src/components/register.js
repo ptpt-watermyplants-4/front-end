@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 import React, { useState, useEffect } from 'react'
-import axios from 'axios';
+import { axiosWithAuth } from '../helpers/axiosWithAuth';
 
 const schema = yup.object().shape({
     username: yup.string().required().min(2, 'name must be at least 2 characters'), 
@@ -71,31 +71,32 @@ useEffect(() => {
 
 
     //post for adding new users
-    // const postNewUser = (user) => {
-    //     axios
-    //     .post('', user)
-    //     .then(response => {
-    //         console.log("New User: ", response)
-    //     })
-    //     .catch(error => {
-    //         console.log("Error creating new user: ", error)
-    //     })
-    //     .finally(() => {
-    //         setFormValues(initialFormValues)
-    //     })
-    // }
+    const postNewUser = (user) => {
+        axiosWithAuth()
+        .post('/auth/register', user)
+        .then(response => {
+            setNewUsers([...newUsers, user])
+            console.log("New user: ", response)
+        })
+        .catch(error => {
+            console.log("Error creating new user: ", error)
+        })
+        .finally(() => {
+            setFormValues(initialFormValues)
+        })
+    }
 
     //submit handler for register form
-    // const submitRegForm = (event) => {
-    //     event.preventDefault();
-    //     const newUser = {
-    //         username: formValues.username, 
-    //         email: formValues.email, 
-    //         phoneNumber: formValues.username, 
-    //         password: formValues.password,
-    //     }
-    //     postNewUser(newUser)
-    // }
+    const submitRegForm = (event) => {
+        event.preventDefault();
+        const newUser = {
+            username: formValues.username, 
+            email: formValues.email, 
+            phoneNumber: formValues.username, 
+            password: formValues.password,
+        }
+        postNewUser(newUser)
+    }
 
     return (
         <div className='form'>
@@ -103,7 +104,7 @@ useEffect(() => {
             <br/>
             <h2>Create your account here!</h2>
 
-            <form> {/*onSubmit={submitRegForm}*/}
+            <form onSubmit={submitRegForm}>
                 <label>Username:
                     <input
                     name='username'
