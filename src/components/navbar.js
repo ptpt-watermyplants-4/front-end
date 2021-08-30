@@ -54,7 +54,7 @@ const Navbar = () => {
             </nav>
 
             <Switch>
-                <PrivateRoute path='/watermyplants' component={WaterMyPlantsPage} />
+                <Route path='/' component={WaterMyPlantsPage} /> {/*Could not give a private route due to no working api to provide a login/register*/}
 
                 <Route path='/profile'>
                     <UserProfile />
@@ -71,10 +71,10 @@ const Navbar = () => {
                 <Route path='/about'>
                     <About />
                 </Route>
-
+{/* 
                 <Route path='/login'>
                     <Login />
-                </Route>
+                </Route> */}
 
                 <Route path='/register'>
                     <Register />
