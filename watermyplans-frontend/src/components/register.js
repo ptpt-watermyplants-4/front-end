@@ -109,6 +109,7 @@ useEffect(() => {
                     <input
                     name='username'
                     type='text'
+                    value={formValues.username}
                     onChange={onChange}
                     />
                 </label>
@@ -117,6 +118,7 @@ useEffect(() => {
                     <input
                     name='email'
                     type='text'
+                    value={formValues.email}
                     onChange={onChange}
                     />
                 </label>
@@ -125,6 +127,7 @@ useEffect(() => {
                     <input 
                     name="phoneNumber"
                     type='text'
+                    value={formValues.phoneNumber}
                     onChange={onChange}
                     />
                 </label>
@@ -135,6 +138,7 @@ useEffect(() => {
                     <input
                     name='password'
                     type='text'
+                    value={formValues.password}
                     onChange={onChange}
                     />
                 <button type='submit'>Register</button>

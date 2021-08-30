@@ -54,9 +54,7 @@ const Navbar = () => {
             </nav>
 
             <Switch>
-                <Route path='/watermyplants'>
-                    <WaterMyPlantsPage />
-                </Route>
+                <PrivateRoute path='/watermyplants' component={WaterMyPlantsPage} />
 
                 <Route path='/profile'>
                     <UserProfile />

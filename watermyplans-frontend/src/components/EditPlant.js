@@ -10,3 +10,5 @@ const EditPlants = () => {
 }
 
 export default EditPlants;
+
+//fixing deployment

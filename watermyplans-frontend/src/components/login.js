@@ -39,8 +39,9 @@ export default function Login() {
         axiosWithAuth()
         .post('/auth/login', member)
         .then(response => {
+            console.log("Login: ", response)
             localStorage.setItem('token', response.data.token)
-            setCurrentUser([...currentUser,response]);
+            setCurrentUser([...currentUser, response]);
             push('/watermyplants')
         })
         .catch(error => {
