@@ -42,7 +42,7 @@ const Navbar = () => {
                     <span className='nav-icon'></span>
                 </label>
             <div className="linkContainer">
-                <Link className="navlink" to="/watermyplants">Main Page</Link>
+                <Link className="navlink" to="/">Main Page</Link>
                 <Link className="navlink" to="/profile">Profile</Link>
                 <Link className="navlink" to="/gallery">Gallery</Link>
                 <Link className="navlink" to="/contact">Contact</Link>
@@ -54,7 +54,7 @@ const Navbar = () => {
             </nav>
 
             <Switch>
-                <Route path='/' component={WaterMyPlantsPage} /> {/*Could not give a private route due to no working api to provide a login/register*/}
+                <Route exact path='/' component={WaterMyPlantsPage} /> {/*Could not give a private route due to no working api to provide a login/register*/}
 
                 <Route path='/profile'>
                     <UserProfile />
@@ -71,10 +71,10 @@ const Navbar = () => {
                 <Route path='/about'>
                     <About />
                 </Route>
-{/* 
+
                 <Route path='/login'>
                     <Login />
-                </Route> */}
+                </Route>
 
                 <Route path='/register'>
                     <Register />
