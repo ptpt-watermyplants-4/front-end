@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import './Styles/waterMyPlants.css';
 
@@ -22,7 +22,7 @@ const AddPlant = (props) => {
         axiosWithAuth()
         .post("/auth/myplants")
         .then(response => {
-            
+
             console.log(response);
         })
         .catch(error => {
